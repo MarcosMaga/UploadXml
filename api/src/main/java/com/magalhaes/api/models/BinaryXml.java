@@ -1,16 +1,17 @@
 package com.magalhaes.api.models;
 
 import java.io.Serializable;
-import java.util.List;
 
-import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,13 +23,33 @@ public class BinaryXml implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "id_xml", unique = true)
-    private String idXml;
-
     @Lob
-    @Column(name = "file_xml", columnDefinition = "BYTEA")
+    @Column(name = "file_xml")
     private byte[] fileXml;
 
-    @OneToMany(mappedBy = "binaryDataXml", cascade = CascadeType.ALL)
-    private List<Invoice> invoices;
+    
+    public void setFileXml(byte[] fileXml) {
+        this.fileXml = fileXml;
+    }
+    
+    @OneToOne
+    @JoinColumn(name = "invoice_id", referencedColumnName = "id", unique = true)
+    @JsonIgnore
+    private Invoice invoice;
+    
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
+    
+    public byte[] getFileXml() {
+        return fileXml;
+    }
 }
