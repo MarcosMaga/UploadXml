@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    container_name: "postgres-container"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: toor
+      POSTGRES_DB: nanodata-desafio
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - backend
+  
+  app:
+    depends_on:
+      - db
+    build: ./api/.
+    ports:
+      - "8080:8080"
+    container_name: 'app-container'
+    restart: always
+    networks:
+      - backend
+
+volumes:
+  postgres_data: {}
+networks:
+  backend:
