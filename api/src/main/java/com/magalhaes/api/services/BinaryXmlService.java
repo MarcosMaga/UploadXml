@@ -1,7 +1,7 @@
 package com.magalhaes.api.services;
 
-import java.io.IOException;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,6 +12,8 @@ import com.magalhaes.api.repositories.BinaryXmlRepository;
 
 @Service
 public class BinaryXmlService {
+    private static final Logger logger = LoggerFactory.getLogger(InvoiceService.class);
+
     @Autowired
     private BinaryXmlRepository binaryXmlRepository;
 
@@ -23,9 +25,8 @@ public class BinaryXmlService {
             binaryXml.setFileXml(file.getBytes());
             binaryXmlRepository.save(binaryXml);
             return binaryXml;
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            System.out.println(e.getStackTrace());
+        } catch (Exception e) {
+            logger.error("Error to convert XML: " + e.getMessage());
             return null;
         }
     }
