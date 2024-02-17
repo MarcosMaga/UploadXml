@@ -44,7 +44,7 @@ function DragDropFiles({setNav}) {
             formData.append('files', file);
         })
 
-        fetch('http://localhost:8080/api/invoice/upload', {
+        fetch('/api/invoice/upload', {
             method: 'POST',
             body: formData
         }).then(response => {

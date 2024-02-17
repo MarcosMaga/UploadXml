@@ -6,7 +6,8 @@ Este projeto tem o objetivo de receber arquivos XML de Notas Fiscais, processa-l
 <ul>
   <li><b>Backend: </b> Java Spring Boot</li>
   <li><b>Frontend: </b> React.js</li>
-  <li><b>Banco de dados: </b> PostgreSQL</li>  
+  <li><b>Banco de dados: </b> PostgreSQL</li>
+  <li><b>Proxy Reverso: Nginx</b></li>
   <li><b>Virtualização: </b> Docker</li>
 </ul>
 
@@ -132,9 +133,10 @@ A API possui um arquivo de logs que fica localizado em `src/logs/app.log` onde f
 * O Projeto se encontra totalmente (Backend, Frontend e Banco de Dados) virtualizado utilizando microserviços com Docker.
 * Para executar o projeto de maneira rápida e simples basta ter o Docker Engine e o Docker Compose instalado na máquina host.
 * Após isso entre na pasta do Projeto e executar o comando: `docker-compose up -d`.
-* A API rodará na porta 8080 e o Frontend na porta 80. (Verifique a disponibilidade destas portas).
 * Para acessar o Front entre na seguinte url: `http://localhost/`.
-* Os conteiners estão expondo a porta 8080 para a máquina host para que seja possível acessar a API por um aplicativo de teste de Endpoints.
+* Para acessar o Back entre na seguinte url: `http://localhost/api/`.
+
+
 
 
 

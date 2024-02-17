@@ -8,34 +8,26 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: toor
       POSTGRES_DB: nanodata-desafio
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - backend
+
+  nginx:
+    depends_on:
+      - api
+      - client
+    restart: always
+    build: ./nginx/.
+    ports:
+      - "80:80"
   
-  app:
+  api:
     depends_on:
       - db
     build: ./api/.
-    ports:
-      - "8080:8080"
-    container_name: 'app-container'
     restart: always
-    networks:
-      - backend
 
-  front:
+  client:
     depends_on:
-      - app
+      - api
     build: ./frontend/.
-    ports:
-      - "80:3000"
-    container_name: 'front-container'
     restart: always
-    networks:
-      - backend
 
-volumes:
-  postgres_data: {}
-networks:
-  backend:
+

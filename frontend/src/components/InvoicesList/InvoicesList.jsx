@@ -14,7 +14,7 @@ function InvoicesList(){
     }, []);
 
     function getInvoices(){
-        fetch(`http://localhost:8080/api/invoice?page=${page}&size=5`, {
+        fetch(`/api/invoice?page=${page}&size=5`, {
                 method: 'GET',
             }).then(response => {
                 if (!response.ok) {

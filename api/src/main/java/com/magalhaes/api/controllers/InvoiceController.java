@@ -22,7 +22,7 @@ import com.magalhaes.api.models.Invoice;
 import com.magalhaes.api.services.InvoiceService;
 
 @RestController
-@RequestMapping("/api/invoice")
+@RequestMapping("/invoice")
 public class InvoiceController{
     private static final Logger logger = LoggerFactory.getLogger(InvoiceService.class);
 
