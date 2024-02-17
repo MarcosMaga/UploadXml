@@ -1,0 +1,45 @@
+.InvoicesList ul{
+    list-style: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0;
+}
+
+.InvoicesList .InvoiceItem {
+    position: relative;
+}
+
+.InvoicesList .InvoiceItem li{
+    text-align: left;
+    padding: 10px;
+    background-color: white;
+    margin: 5px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
+.InvoicesList .InvoiceItem ul{
+    list-style: disc;
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 30px;
+    display: none;
+}
+
+.InvoicesList .InvoiceItem a{
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+}
+
+.InvoicesList .InvoiceItem .visible{
+    display: block;
+}
+
+.InvoicesList .InvoiceItem .InvoiceInfo li{
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+    display: block;
+}

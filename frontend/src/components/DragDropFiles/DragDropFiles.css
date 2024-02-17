@@ -1,0 +1,45 @@
+.DragDropFiles, .FilesUploads, .Status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border: 4px dashed rgb(117, 112, 122);
+    padding: 20px;
+    margin: 3% 20%;
+    color: #5e5e5e;
+}
+
+.DragOver{
+    background-color: #e0e0e0;
+}
+
+.DragDropFiles button, .FilesUploads button, .Status button{
+    padding: 12px;
+    font-size: medium;
+    color: white;
+    background-color: #454CAD;
+    border: 0;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.FilesUploads .FilesName, .Status .FilesName{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    align-items: flex-start;
+}
+
+.FilesUploads .FilesName p, .Status .FilesName p{
+    background-color: #e0e0e0;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.FilesUploads .FilesName p:hover{
+    background-color: #c9c9c9;
+    color: tomato;
+    cursor: pointer;
+}

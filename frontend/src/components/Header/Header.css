@@ -1,0 +1,21 @@
+.Header header{
+    display: flex;
+    background-color: #454CAD;
+}
+
+.Header header h2{
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+.Header header a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.Header header a:hover{
+    background-color: #393f92;
+}

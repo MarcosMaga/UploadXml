@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,7 @@ public class InvoiceController{
     private InvoiceService invoiceService;
 
     @PostMapping("/upload")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Object> uploadInvoice(@RequestParam("files") MultipartFile[] files) throws IOException{
         try{
             InvoiceResponse response = invoiceService.processXml(files);
@@ -40,6 +42,7 @@ public class InvoiceController{
     }
 
     @GetMapping
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Page<Invoice>> getInvoices(Pageable pageable){
         Page<Invoice> invoices = invoiceService.getInvoices(pageable);
         return invoices.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(invoices);
