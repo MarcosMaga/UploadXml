@@ -7,7 +7,7 @@ Este projeto tem o objetivo de receber arquivos XML de Notas Fiscais, processa-l
   <li><b>Backend: </b> Java Spring Boot</li>
   <li><b>Frontend: </b> React.js</li>
   <li><b>Banco de dados: </b> PostgreSQL</li>
-  <li><b>Proxy Reverso: Nginx</b></li>
+  <li><b>Proxy Reverso: </b> Nginx</li>
   <li><b>Virtualização: </b> Docker</li>
 </ul>
 
@@ -127,7 +127,7 @@ Rota responsavél por receber 1 ou mais arquivos XML de NF e armazena-los no ban
 ```
 ## Logs
 
-A API possui um arquivo de logs que fica localizado em `src/logs/app.log` onde fica armazenado erros e avisos ocasionados. 
+A API possui um arquivo de log que fica localizado em `src/logs/app.log` onde fica armazenado erros e avisos ocasionados. 
 
 # Execução e Preparo
 * O Projeto se encontra totalmente (Backend, Frontend e Banco de Dados) virtualizado utilizando microserviços com Docker.
